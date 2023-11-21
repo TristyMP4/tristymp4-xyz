@@ -1,0 +1,185 @@
+/* Define CSS custom properties for text colors in both modes */
+:root {
+    --text-color-light: #00ccff; /* Bright blue in light mode */
+    --text-color-dark: #00e1ff;  /* White in dark mode */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style for the link without underlining */
+a.button {
+    text-decoration: none; /* Remove underlining */
+}
+
+/* Add a semi-transparent overlay to darken the background */
+body::before {
+    content: "";
+    background-image: url("bg.png"); /* Replace 'bg.png' with your actual image file path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(30px); /* Adjust the blur values as needed */
+    z-index: -1;
+}
+
+/* Semi-transparent background overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5 for 50% opacity) */
+    z-index: -1;
+}
+
+/* Styling for the modern-looking bar */
+.bar {
+    background-color: rgba(233, 233, 233, 0.199); /* Whiter background */
+    width: 100%;
+    padding: 10px 0; /* Adjust the padding as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for buttons in the top bar */
+.button {
+    position: relative;
+    background-color: var(--text-color-light); /* Use the same blue as "TristyMP4" text */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1em;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5); /* White glow effect */
+    outline: none; /* Remove default outline */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    /* Use the custom properties for text color */
+    color: var(--text-color-light); /* Default to bright blue in light mode */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); /* Text shadow on the blue text */
+    -webkit-text-stroke: 1px white; /* White stroke */
+}
+
+p {
+    font-size: 1.5em;
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+    /* Use the custom properties for text color in dark mode */
+    h1 {
+        color: var(--text-color-dark); /* White in dark mode */
+    }
+}
+
+/* Style for the My Projects section */
+#projects {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    padding: 100px 0;
+}
+
+/* Style for the My Projects section */
+#projects {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    padding: 100px 0;
+}
+
+/* Style for the content in the My Projects section */
+.project-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    z-index: 1; /* Ensure content is above the blurred background */
+    overflow: hidden; /* Hide any content that overflows */
+}
+
+.custom-link {
+    color: rgb(0, 225, 255); /* Change the color to your preferred color */
+}
+
+/* Style for the button box */
+.button-box {
+    background-color: #ddd; /* Grey background color */
+    padding: 10px; /* Add some padding for spacing */
+    width: 200px; /* Adjust the width as needed */
+    text-align: center; /* Center-align the buttons */
+}
+
+/* Style for the buttons inside the box (optional) */
+.button-box .button {
+    margin: 5px 0; /* Add some margin for spacing between buttons */
+}
+
+
+/* Style for the text on the right */
+.project-text {
+    text-align: left;
+}
+
+/* Style for the image on the left side */
+.project-image {
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add some spacing between image and text */
+    max-width: 50%; /* Limit the width of the image */
+}
+
+/* Style for text elements in the My Projects section (no blur) */
+.project-text p {
+    filter: none; /* Remove blur on text */
+}
+
+/* Style for the image */
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Add rounded corners to the image */
+}
+.project-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the gap as needed */
+}
